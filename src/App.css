@@ -1,5 +1,8 @@
-.App {
+#root {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .App-logo {
@@ -35,4 +38,15 @@
   to {
     transform: rotate(360deg);
   }
+}
+.pokemon {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.poke {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
 }
