@@ -7,14 +7,14 @@ class App extends Component {
     data: [],
     loading: true,
     query: null,
-    option: 'asc'
+    option: ''
   }
   sortOption = ['asc', 'desc']
   ascDescOrderChange = (e) => {
     this.setState({option: e.target.value})
   }
 
-  fetchData = async () => {
+  fetchPokemon = async () => {
     let url = 'https://pokedex-alchemy.herokuapp.com/api/pokedex';
     if (this.state.query) {
       url = url + `?pokemon=${this.state.query}`;
@@ -25,7 +25,6 @@ class App extends Component {
     let response = await fetch(url);
 
     let data = await response.json();
-    console.log(data.results)
     this.setState({ data: data.results, loading: false});
   };
 
@@ -34,7 +33,7 @@ class App extends Component {
   };
 
   componentDidMount() {
-    this.fetchData();
+    this.fetchPokemon();
   }
 
   render() { 
@@ -47,11 +46,11 @@ class App extends Component {
           <section>
             <input onChange={this.updateQuery} type='text'></input>
             <Dropdown 
-              label='Ascending or Descending'
+              label='A-Z or Z-A'
               option={this.sortOption}
               changeEvent={this.ascDescOrderChange}
             />
-            <button onClick={this.fetchData}>Search!</button>
+            <button onClick={this.fetchPokemon}>Search!</button>
             <PokeList pokeArr={this.state.data}  />
           </section>
         )}

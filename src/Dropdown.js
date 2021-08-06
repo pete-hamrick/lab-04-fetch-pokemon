@@ -8,7 +8,7 @@ class Dropdown extends Component {
             <label>{this.props.label}</label>
             <select onChange={this.props.changeEvent} defaultValue='asc'>
                 {this.props.option.map((choice) => (
-                    <option value={choice}>{choice}</option>
+                    <option key={this.props.choice} value={choice}>{choice}</option>
                 ))}
             </select>  
           </>  
