@@ -1,10 +1,13 @@
-#root {
+body {
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  background-color: #ffcb05;
 }
-
+h1, h3, p{
+  color: #2a75bb;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;

@@ -1,24 +1,32 @@
 import React, { Component } from 'react'
 import './App.css';
 import PokeList from './PokeList.js'
-
+import Dropdown from './Dropdown.js';
 class App extends Component {
   state = { 
     data: [],
     loading: true,
-    query: null
+    query: null,
+    option: 'asc'
+  }
+  sortOption = ['asc', 'desc']
+  ascDescOrderChange = (e) => {
+    this.setState({option: e.target.value})
   }
 
   fetchData = async () => {
     let url = 'https://pokedex-alchemy.herokuapp.com/api/pokedex';
     if (this.state.query) {
-      url = url + `?search=${this.state.query}`;
+      url = url + `?pokemon=${this.state.query}`;
+    }
+    if (this.state.option) {
+      url = url + `?sort=pokemon&direction=${this.state.option}`
     }
     let response = await fetch(url);
 
     let data = await response.json();
-
-    this.setState({ data, loading: false});
+    console.log(data.results)
+    this.setState({ data: data.results, loading: false});
   };
 
   updateQuery = (e) => {
@@ -38,8 +46,13 @@ class App extends Component {
         {!loading && (
           <section>
             <input onChange={this.updateQuery} type='text'></input>
+            <Dropdown 
+              label='Ascending or Descending'
+              option={this.sortOption}
+              changeEvent={this.ascDescOrderChange}
+            />
             <button onClick={this.fetchData}>Search!</button>
-            <PokeList pokeArr={this.state.data.results}  />
+            <PokeList pokeArr={this.state.data}  />
           </section>
         )}
         
