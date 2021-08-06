@@ -1,7 +1,13 @@
-.App {
+body {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #ffcb05;
 }
-
+h1, h3, p{
+  color: #2a75bb;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -35,4 +41,15 @@
   to {
     transform: rotate(360deg);
   }
+}
+.pokemon {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.poke {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
 }
