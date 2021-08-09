@@ -12,8 +12,8 @@ class App extends Component {
               <BrowserRouter>
                   <Header />
                   <Switch>
-                      <Route path='/pokemon/:id' Component={PokeDetail} />
-                      <Route path='/pokemon' Component={PokemonContainer} />
+                      <Route path='/pokemon/:id' component={PokeDetail} />
+                      <Route path='/pokemon' component={PokemonContainer} />
                       <Route pat='/' component={Home} />
                   </Switch>
               </BrowserRouter>

@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import React, { Component } from 'react';
 import PokeList from './PokeList.js';
 
 class PokemonContainer extends Component {
@@ -51,10 +51,12 @@ class PokemonContainer extends Component {
 
     nextPage = async() => {
         await this.setState({page: this.state.page + 1})
+        this.fetchPokemon();
     };
     
     prevPage = async() => {
         await this.setState({page: this.state.page - 1})
+        this.fetchPokemon();
     };
     goToLast = async () => {
         await this.setState({ page: this.state.lastPage});
