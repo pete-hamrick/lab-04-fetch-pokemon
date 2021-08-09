@@ -23,6 +23,9 @@ class PokeDetail extends Component {
                 <h1>{data.pokemon}</h1>
                 <div className="poke-detail">
                     <img src={data.url_image} alt="poke" />
+                    <p>Type 1: {data.type_1}</p>
+                    <p>Type 2: {data.type_2}</p>
+                    <p>Abilities: {data.ability_1}, {data.ability_2}</p>
                 </div>
             </section>
         );

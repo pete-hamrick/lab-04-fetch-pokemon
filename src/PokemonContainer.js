@@ -91,8 +91,12 @@ class PokemonContainer extends Component {
                     </>
                 )}
             </div>
-            Current Page: {this.state.page}
-            Last Page: {this.state.lastPage}
+            <p>
+                Current Page: {this.state.page}
+            </p>
+            <p>
+                Last Page: {this.state.lastPage}
+            </p>
             {this.state.loading && <h3> LOADING </h3>}
             {!this.state.loading && (
             <section>
