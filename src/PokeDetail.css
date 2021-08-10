@@ -1,0 +1,24 @@
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.poke-detail {
+    width: 550px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.poke-detail img {
+    width: 80%;
+}
+.attributes {
+    background-color: #cc0000;
+    width: 100%;
+    font-size: 1.2em;
+}
+
+.attributes p {
+    color: black;
+}
