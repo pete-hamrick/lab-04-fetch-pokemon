@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import PokeList from './PokeList.js';
-
+import './PokemonContainer.css'
 class PokemonContainer extends Component {
     state = { 
         data: [],
         loading: true,
-        query: null,
+        query: '',
         sortOption: 'asc',
         page: 1,
         lastPage: 1
@@ -97,7 +97,7 @@ class PokemonContainer extends Component {
             <p>
                 Last Page: {this.state.lastPage}
             </p>
-            {this.state.loading && <h3> LOADING </h3>}
+            {this.state.loading && <div class="lds-hourglass"></div>}
             {!this.state.loading && (
             <section>
                 <PokeList pokeArr={this.state.data}  />
