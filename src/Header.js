@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import { NavLink } from 'react-router-dom';
-import './Header.css'
+import './Header.css';
 
 class Header extends Component {
     render() { 
@@ -8,10 +8,10 @@ class Header extends Component {
             <header>
                 <h1>Pokedex</h1>
                 <div className='links'>
-                    <NavLink exact to='home'>
+                    <NavLink activeClassName='selected' exact to='/'>
                         Home
                     </NavLink>
-                    <NavLink to='/pokemon'>Pokemon List</NavLink>
+                    <NavLink activeClassName='selected' to='/pokemon'>Pokemon List</NavLink>
                 </div>
             </header>
         );
