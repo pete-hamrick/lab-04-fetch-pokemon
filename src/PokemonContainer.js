@@ -97,7 +97,7 @@ class PokemonContainer extends Component {
             <p>
                 Last Page: {this.state.lastPage}
             </p>
-            {this.state.loading && <div class="lds-hourglass"></div>}
+            {this.state.loading && <div className="lds-hourglass"></div>}
             {!this.state.loading && (
             <section>
                 <PokeList pokeArr={this.state.data}  />

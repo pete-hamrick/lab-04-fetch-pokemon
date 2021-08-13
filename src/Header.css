@@ -13,18 +13,18 @@ h1{
 }
 .links {
     text-transform: none;
-    font-size: 1rem;
+    font-size: 1.2rem;
     display: flex;
     flex-direction: column;
     text-align: right;
+    margin-right: 10px;
 }
 .links a {
-    text-decoration: none;
     color: #ffcb05;
 }
-   
-.links a:active,
-.links a:hover {
+
+
+.selected {
     background-color: red;
     font-weight: bold;
 }
