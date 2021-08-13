@@ -5,7 +5,7 @@ class PokemonContainer extends Component {
     state = { 
         data: [],
         loading: true,
-        query: null,
+        query: '',
         sortOption: 'asc',
         page: 1,
         lastPage: 1
